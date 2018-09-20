@@ -1,0 +1,101 @@
+dofile("script/include/inc_all.lua")
+dofile("script/include/inc_event.lua")
+function groundInit()
+end
+function groundStart()
+end
+function main06_nazonotabipokemon01_init()
+end
+function main06_nazonotabipokemon01_start()
+  WINDOW:Narration(TimeSec(0.5), TimeSec(0.5), -240773458)
+  subEveCloseMsg()
+  CAMERA:SetEye(SymCam("CAMERA_00"))
+  CAMERA:SetTgt(SymCam("CAMERA_00"))
+  SOUND:FadeInEnv(SymSnd("SE_ENV_BREEZE_LP"), TimeSec(0.5), Volume(256))
+  SCREEN_A:FadeIn(TimeSec(0.5), true)
+  TASK:Sleep(TimeSec(0.3))
+  WINDOW:Talk(SymAct(""), -390256657)
+  WINDOW:Talk(SymAct(""), -1013943252)
+  WINDOW:Talk(SymAct(""), -628406931)
+  WINDOW:CloseMessage()
+  SCREEN_A:FadeOut(TimeSec(0.5), true)
+end
+function main06_nazonotabipokemon01_end()
+end
+function main06_nazonotabipokemon02_init()
+end
+function main06_nazonotabipokemon02_start()
+  SOUND:PlayEnv(SymSnd("SE_ENV_BREEZE_LP"), Volume(256))
+  CAMERA:SetEye(SymCam("CAMERA_00"))
+  CAMERA:SetTgt(SymCam("CAMERA_00"))
+  SCREEN_A:FadeIn(TimeSec(0.5), true)
+  WINDOW:Talk(SymAct(""), -1781869654)
+  WINDOW:Talk(SymAct(""), -1932401941)
+  WINDOW:Talk(SymAct(""), -1476611800)
+  WINDOW:Talk(SymAct(""), -1092124567)
+  WINDOW:CloseMessage()
+  SOUND:FadeOutEnv(TimeSec(1))
+  SCREEN_A:FadeOut(TimeSec(0.5), true)
+end
+function main06_nazonotabipokemon02_end()
+end
+function main06_nazonotabipokemon03_init()
+end
+function main06_nazonotabipokemon03_start()
+  MAP:SetVisible(false)
+  MAP:SetBG(SymImg("WALLPAPER_MAIN_CAPTURE_BG01"))
+  MAP:SetVisibleBG(true)
+  WINDOW:BeginChapter()
+  SCREEN_A:FadeOutAll(TimeSec(0), true)
+  SCREEN_A:FadeIn(TimeSec(0), true)
+  SCREEN_A:FadeInAll(TimeSec(1), false)
+  WINDOW:SetWaitMode(TimeSec(2), TimeSec(1))
+  WINDOW:Chapter(TimeSec(1.5), TimeSec(1.5), 964664486)
+  TASK:Sleep(TimeSec(3))
+  SCREEN_A:FadeOutAll(TimeSec(1), true)
+  SCREEN_A:FadeOut(TimeSec(0), true)
+  WINDOW:EndChapter()
+  WINDOW:ForceCloseMessage()
+  WINDOW:SetWaitMode(TimeSec(-1), TimeSec(-1))
+  SCREEN_A:FadeInAll(TimeSec(0), true)
+  MAP:SetVisible(true)
+  MAP:SetVisibleBG(false)
+end
+function main06_nazonotabipokemon03_end()
+end
+function main06_nazonotabipokemon04_init()
+end
+function main06_nazonotabipokemon04_start()
+  CAMERA:SetEye(SymCam("CAMERA_00"))
+  CAMERA:SetTgt(SymCam("CAMERA_00"))
+  SCREEN_A:FadeIn(TimeSec(0.5), true)
+  TASK:Sleep(TimeSec(2))
+  SCREEN_A:FadeOut(TimeSec(0.5), true)
+end
+function main06_nazonotabipokemon04_end()
+end
+function main06_nazonotabipokemon05_init()
+end
+function main06_nazonotabipokemon05_start()
+  CAMERA:SetEye(SymCam("CAMERA_00"))
+  CAMERA:SetTgt(SymCam("CAMERA_00"))
+  CH("HERO"):SetDir(RotateTarget(-45))
+  CH("HERO"):SetMotion(SymMot("EV001_SLEEP01"), LOOP.ON, TimeSec(0))
+  local taskWakeUpHero = function()
+    CH("HERO"):SetMotion(SymMot("EV001_SLEEP02"), LOOP.OFF)
+    CH("HERO"):WaitPlayMotion()
+    CH("HERO"):SetMotion(SymMot("WAIT02"), LOOP.ON)
+  end
+  SOUND:PlayBgm(SymSnd("BGM_EVE_KONOHANANOIE"), Volume(256))
+  SCREEN_A:FadeIn(TimeSec(0.5), true)
+  TASK:Sleep(TimeSec(0.5))
+  TASK:Regist(Group("grpHero"), taskWakeUpHero)
+  TASK:WaitTask(Group("grpHero"))
+  TASK:Sleep(TimeSec(0.3))
+  CAMERA:MoveToHero(Speed(4, ACCEL_TYPE.NONE, DECEL_TYPE.HIGH))
+  CAMERA:WaitMove()
+end
+function main06_nazonotabipokemon05_end()
+end
+function groundEnd()
+end

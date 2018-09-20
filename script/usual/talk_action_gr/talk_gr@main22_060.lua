@@ -1,0 +1,11 @@
+dofile("script/include/inc_all.lua")
+dofile("script/include/inc_event.lua")
+function NYASUPAA(chSymb0)
+  subUsuComFuncTalkInBasePara2_01(chSymb0)
+  WINDOW:DrawFace(20, 88, SymAct("NYASUPAA"), FACE_TYPE.DECIDE)
+  CH(chSymb0):SetFacialMotion(FACIAL_MOTION.DECIDE)
+  WINDOW:Talk(SymAct("NYASUPAA"), -1499048494)
+  WINDOW:Talk(SymAct("NYASUPAA"), -1078106989)
+  WINDOW:CloseMessage()
+  CH(chSymb0):ResetFacialMotion()
+end

@@ -1,0 +1,10 @@
+dofile("script/include/inc_all.lua")
+dofile("script/include/inc_event.lua")
+function MV_FM_TW00_SCHOOL00()
+  CH("HERO"):SetFacialMotion(FACIAL_MOTION.DECIDE)
+  WINDOW:DrawFace(20, 88, SymAct("HERO"), FACE_TYPE.DECIDE)
+  WINDOW:Monologue(1377489925)
+  WINDOW:Monologue(1258415428)
+  WINDOW:CloseMessage()
+  CH("HERO"):ResetFacialMotion()
+end

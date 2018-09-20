@@ -1,0 +1,21 @@
+dofile("script/include/inc_all.lua")
+dofile("script/include/inc_event.lua")
+function PARTNER(chSymb0)
+  subUsuComFuncTalkInBasePara2_01(chSymb0)
+  CH(chSymb0):SetFacialMotion(FACIAL_MOTION.DECIDE)
+  WINDOW:DrawFace(20, 88, SymAct("PARTNER"), FACE_TYPE.DECIDE)
+  WINDOW:SwitchTalk({PARTNER_0 = -182757153, PARTNER_1 = -335517282})
+  WINDOW:CloseMessage()
+  CH(chSymb0):ResetFacialMotion()
+end
+function KUCHIITO(chSymb0)
+  WINDOW:DrawFace(20, 88, SymAct("KUCHIITO"), FACE_TYPE.NORMAL)
+  WINDOW:Talk(SymAct("KUCHIITO"), -953337251)
+  WINDOW:Talk(SymAct("KUCHIITO"), -566883556)
+  WINDOW:CloseMessage()
+end
+function HORUBII(chSymb0)
+  WINDOW:DrawFace(20, 88, SymAct("HORUBII"), FACE_TYPE.NORMAL)
+  WINDOW:Talk(SymAct("HORUBII"), -1854431781)
+  WINDOW:CloseMessage()
+end

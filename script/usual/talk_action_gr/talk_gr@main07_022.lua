@@ -1,0 +1,15 @@
+dofile("script/include/inc_all.lua")
+dofile("script/include/inc_event.lua")
+function PARTNER(chSymb0)
+  WINDOW:DrawFace(20, 88, SymAct("PARTNER"), FACE_TYPE.NORMAL)
+  WINDOW:SwitchTalk({PARTNER_0 = 1680096648, PARTNER_1 = 2101284041})
+  WINDOW:SwitchTalk({PARTNER_0 = 1444044554, PARTNER_1 = 1326018123})
+  WINDOW:CloseMessage()
+end
+function DENRYUU(chSymb0)
+  WINDOW:DrawFace(20, 88, SymAct("DENRYUU"), FACE_TYPE.NORMAL)
+  WINDOW:Talk(SymAct("DENRYUU"), 4782220)
+  WINDOW:Talk(SymAct("DENRYUU"), 424921549)
+  WINDOW:Talk(SymAct("DENRYUU"), 847157774)
+  WINDOW:CloseMessage()
+end

@@ -1,0 +1,26 @@
+dofile("script/include/inc_all.lua")
+dofile("script/include/inc_event.lua")
+function PARTNER(chSymb0)
+  WINDOW:DrawFace(20, 88, SymAct("PARTNER"), FACE_TYPE.DECIDE)
+  CH(chSymb0):SetFacialMotion(FACIAL_MOTION.DECIDE)
+  WINDOW:SwitchTalk({PARTNER_0 = -171310059, PARTNER_1 = -321833644})
+  WINDOW:CloseMessage()
+  CH(chSymb0):ResetFacialMotion()
+end
+function NUMERA(chSymb0)
+  WINDOW:DrawFace(20, 88, SymAct("NUMERA"), FACE_TYPE.TEARS)
+  WINDOW:Talk(SymAct("NUMERA"), -939759977)
+  WINDOW:CloseMessage()
+end
+function SHIKIJIKA_SPRING(chSymb0)
+  WINDOW:DrawFace(20, 88, SymAct("SHIKIJIKA_SPRING"), FACE_TYPE.DECIDE)
+  CH(chSymb0):SetFacialMotion(FACIAL_MOTION.DECIDE)
+  WINDOW:Talk(SymAct("SHIKIJIKA_SPRING"), -555264042)
+  WINDOW:CloseMessage()
+  CH(chSymb0):ResetFacialMotion()
+end
+function NYASUPAA(chSymb0)
+  WINDOW:DrawFace(20, 88, SymAct("NYASUPAA"), FACE_TYPE.NORMAL)
+  WINDOW:Talk(SymAct("NYASUPAA"), -1851342575)
+  WINDOW:CloseMessage()
+end

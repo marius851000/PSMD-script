@@ -1,0 +1,11 @@
+dofile("script/include/inc_all.lua")
+dofile("script/include/inc_event.lua")
+function MV_ATLAS_PLACE()
+  SOUND:PlaySe(SymSnd("SE_EVT_SIGN_QUESTION_01"), Volume(256))
+  CH("HERO"):SetManpu("MP_QUESTION")
+  CH("HERO"):WaitManpu()
+  WINDOW:DrawFace(20, 88, SymAct("HERO"), FACE_TYPE.SPECIAL02)
+  WINDOW:Monologue(313755746)
+  WINDOW:Monologue(195606819)
+  WINDOW:CloseMessage()
+end

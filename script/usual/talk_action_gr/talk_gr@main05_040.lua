@@ -1,0 +1,28 @@
+dofile("script/include/inc_all.lua")
+dofile("script/include/inc_event.lua")
+function ABAGOORA(chSymb0)
+  WINDOW:DrawFace(20, 88, SymAct("ABAGOORA"), FACE_TYPE.NORMAL)
+  WINDOW:Talk(SymAct("ABAGOORA"), -844065442)
+  WINDOW:CloseMessage()
+end
+function HASUBURERO(chSymb0)
+  WINDOW:DrawFace(20, 88, SymAct("HASUBURERO"), FACE_TYPE.NORMAL)
+  WINDOW:Talk(SymAct("HASUBURERO"), -726948833)
+  WINDOW:CloseMessage()
+end
+function HIPOPOTASU(chSymb0)
+  WINDOW:DrawFace(20, 88, SymAct("HIPOPOTASU"), FACE_TYPE.HAPPY)
+  CH(chSymb0):SetFacialMotion(FACIAL_MOTION.HAPPY)
+  WINDOW:Talk(SymAct("HIPOPOTASU"), -7931940)
+  SOUND:PlaySe(SymSnd("SE_EVT_JUMP_02"), Volume(256))
+  subEveDoubleJump(CH(chSymb0))
+  WINDOW:CloseMessage()
+  CH(chSymb0):ResetFacialMotion()
+end
+function SUBOMII(chSymb0)
+  WINDOW:DrawFace(20, 88, SymAct("SUBOMII"), FACE_TYPE.THINK)
+  CH(chSymb0):SetFacialMotion(FACIAL_MOTION.THINK)
+  WINDOW:Talk(SymAct("SUBOMII"), -425867619)
+  WINDOW:CloseMessage()
+  CH(chSymb0):ResetFacialMotion()
+end

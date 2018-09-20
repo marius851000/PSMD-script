@@ -1,0 +1,47 @@
+dofile("script/include/inc_all.lua")
+dofile("script/include/inc_event.lua")
+function groundInit()
+end
+function groundStart()
+end
+function main06_m06isshonitoukou01_init()
+end
+function main06_m06isshonitoukou01_start()
+  CAMERA:SetSisaAzimuthDifferenceVolume(Volume(3))
+  CAMERA:SetSisaRateVolume(Volume(0.5))
+  CAMERA:SetEye(SymCam("CAMERA_00"))
+  CAMERA:SetTgt(SymCam("CAMERA_00"))
+  local taskHero00 = function()
+    TASK:Sleep(TimeSec(0.2))
+    SOUND:PlaySe(SymSnd("SE_EVT_SIGN_NOTICE_LOW_02"), Volume(256))
+    CH("HERO"):SetManpu("MP_NOTICE_L")
+    CH("HERO"):WaitManpu()
+    CH("HERO"):DirTo(SymPos("P00_PARTNER"), Speed(350), ROT_TYPE.NEAR)
+    CH("HERO"):WaitRotate()
+  end
+  SOUND:PlayBgm(SymSnd("BGM_EVE_ODAYAKA_01"), Volume(256))
+  CH("HERO"):WalkTo(SymPos("P00_HERO"), Speed(1.5))
+  SCREEN_A:FadeIn(TimeSec(0.5), true)
+  CH("HERO"):WaitMove()
+  CH("PARTNER"):RunTo(SymPos("P00_PARTNER"), Speed(4))
+  TASK:Regist(taskHero00)
+  WINDOW:SwitchTalk({PARTNER_0 = -205481699, PARTNER_1 = -354703268})
+  CH("PARTNER"):WaitMove()
+  WINDOW:CloseMessage()
+  CH("PARTNER"):SetManpu("MP_SPREE_LP")
+  CH("PARTNER"):SetFacialMotion(FACIAL_MOTION.HAPPY)
+  TASK:Regist(subEveDoubleJump, {
+    CH("PARTNER")
+  })
+  WINDOW:DrawFace(20, 88, SymAct("PARTNER"), FACE_TYPE.HAPPY)
+  WINDOW:SwitchTalk({PARTNER_0 = -1040778337, PARTNER_1 = -655504674})
+  WINDOW:CloseMessage()
+  CH("PARTNER"):ResetManpu()
+  CH("PARTNER"):ResetFacialMotion()
+  subEveNod(CH("HERO"))
+  SCREEN_A:FadeOut(TimeSec(0.5), true)
+end
+function main06_m06isshonitoukou01_end()
+end
+function groundEnd()
+end

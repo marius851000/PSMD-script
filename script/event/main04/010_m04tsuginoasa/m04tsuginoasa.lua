@@ -1,0 +1,57 @@
+dofile("script/include/inc_all.lua")
+dofile("script/include/inc_event.lua")
+function groundInit()
+end
+function groundStart()
+end
+function main04_m04tsuginoasa01_init()
+end
+function main04_m04tsuginoasa01_start()
+  MAP:SetVisible(false)
+  MAP:SetBG(SymImg("WALLPAPER_MAIN_CAPTURE_BG01"))
+  MAP:SetVisibleBG(true)
+  WINDOW:BeginChapter()
+  SCREEN_A:FadeOutAll(TimeSec(0), true)
+  SCREEN_A:FadeIn(TimeSec(0), true)
+  SCREEN_A:FadeInAll(TimeSec(1), false)
+  WINDOW:SetWaitMode(TimeSec(2), TimeSec(1))
+  WINDOW:Chapter(TimeSec(1.5), TimeSec(1.5), 1273815297)
+  TASK:Sleep(TimeSec(3))
+  SCREEN_A:FadeOutAll(TimeSec(1), true)
+  SCREEN_A:FadeOut(TimeSec(0), true)
+  WINDOW:EndChapter()
+  WINDOW:ForceCloseMessage()
+  WINDOW:SetWaitMode(TimeSec(-1), TimeSec(-1))
+  SCREEN_A:FadeInAll(TimeSec(0), true)
+  MAP:SetVisible(true)
+  MAP:SetVisibleBG(false)
+end
+function main04_m04tsuginoasa01_end()
+end
+function main04_m04tsuginoasa02_init()
+end
+function main04_m04tsuginoasa02_start()
+  WINDOW:Narration(TimeSec(0.5), TimeSec(0.5), 1391972416)
+  WINDOW:CloseMessage()
+  CAMERA:SetEye(SymCam("CAMERA_00"))
+  CAMERA:SetTgt(SymCam("CAMERA_00"))
+  CH("HERO"):SetDir(RotateTarget(-45))
+  CH("HERO"):SetMotion(SymMot("EV001_SLEEP01"), LOOP.ON, TimeSec(0))
+  local taskWakeUpHero = function()
+    CH("HERO"):SetMotion(SymMot("EV001_SLEEP02"), LOOP.OFF)
+    CH("HERO"):WaitPlayMotion()
+    CH("HERO"):SetMotion(SymMot("WAIT02"), LOOP.ON)
+  end
+  SOUND:PlayBgm(SymSnd("BGM_EVE_KONOHANANOIE"), Volume(256))
+  SCREEN_A:FadeIn(TimeSec(0.5), true)
+  TASK:Sleep(TimeSec(0.5))
+  TASK:Regist(Group("grpHero"), taskWakeUpHero)
+  TASK:WaitTask(Group("grpHero"))
+  TASK:Sleep(TimeSec(0.3))
+  CAMERA:MoveToHero(Speed(4, ACCEL_TYPE.NONE, DECEL_TYPE.HIGH))
+  CAMERA:WaitMove()
+end
+function main04_m04tsuginoasa02_end()
+end
+function groundEnd()
+end

@@ -1,0 +1,18 @@
+dofile("script/include/inc_all.lua")
+dofile("script/include/inc_event.lua")
+function PARTNER(chSymb0)
+  WINDOW:DrawFace(20, 88, SymAct("PARTNER"), FACE_TYPE.NORMAL)
+  WINDOW:SwitchTalk({PARTNER_0 = 318157385, PARTNER_1 = 200114952})
+  WINDOW:SwitchTalk({PARTNER_0 = 549507275, PARTNER_1 = 970711434})
+  WINDOW:CloseMessage()
+end
+function ABAGOORA(chSymb0)
+  WINDOW:DrawFace(20, 88, SymAct("ABAGOORA"), FACE_TYPE.NORMAL)
+  WINDOW:Talk(SymAct("ABAGOORA"), 1989834573)
+  WINDOW:Talk(SymAct("ABAGOORA"), 1870743052)
+  WINDOW:DrawFace(20, 88, SymAct("ABAGOORA"), FACE_TYPE.ANGRY)
+  CH(chSymb0):SetFacialMotion(FACIAL_MOTION.ANGRY)
+  WINDOW:Talk(SymAct("ABAGOORA"), 1152128463)
+  WINDOW:CloseMessage()
+  CH(chSymb0):ResetFacialMotion()
+end

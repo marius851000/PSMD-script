@@ -1,0 +1,22 @@
+dofile("script/include/inc_all.lua")
+dofile("script/include/inc_event.lua")
+function PARTNER(chSymb0)
+  WINDOW:DrawFace(20, 88, SymAct("PARTNER"), FACE_TYPE.NORMAL)
+  WINDOW:SwitchTalk({PARTNER_0 = -325446617, PARTNER_1 = -176085658})
+  WINDOW:SwitchTalk({PARTNER_0 = -559122779, PARTNER_1 = -944289820})
+  WINDOW:CloseMessage()
+end
+function OOBEMU(chSymb0)
+  WINDOW:DrawFace(20, 88, SymAct("OOBEMU3"), FACE_TYPE.NORMAL)
+  WINDOW:Talk(SymAct("OOBEMU3"), -1997090525)
+  WINDOW:Talk(SymAct("OOBEMU3"), -1846681502)
+  WINDOW:Talk(SymAct("OOBEMU3"), -1161776223)
+  WINDOW:Talk(SymAct("OOBEMU3"), -1545895200)
+  WINDOW:CloseMessage()
+end
+function NYASUPAA(chSymb0)
+  WINDOW:DrawFace(20, 88, SymAct("NYASUPAA"), FACE_TYPE.NORMAL)
+  WINDOW:Talk(SymAct("NYASUPAA"), 608411183)
+  WINDOW:Talk(SymAct("NYASUPAA"), 1029222254)
+  WINDOW:CloseMessage()
+end

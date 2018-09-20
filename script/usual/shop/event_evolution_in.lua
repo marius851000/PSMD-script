@@ -1,0 +1,12 @@
+function Event_Evolution_in_start()
+  SCREEN_B:LoadWallpaper("WALLPAPER_SUB_EVOLUTION")
+  CAMERA:SetEye(SymCam("CAMERA_00"))
+  CAMERA:SetTgt(SymCam("CAMERA_00"))
+  TASK:Sleep(TimeSec(0.5))
+  CAMERA:MoveTgt(SymCam("CAMERA_01"), TimeSec(3), ACCEL_TYPE.NONE, DECEL_TYPE.HIGH)
+  SCREEN_A:FadeInAll(TimeSec(0.5), false)
+  SCREEN_B:FadeInAll(TimeSec(0.5), true)
+  CAMERA:WaitMove()
+  SCREEN_A:WhiteOutAll(TimeSec(0.5), false)
+  SCREEN_B:WhiteOutAll(TimeSec(0.5), true)
+end

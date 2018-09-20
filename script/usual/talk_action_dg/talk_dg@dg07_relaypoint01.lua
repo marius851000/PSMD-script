@@ -1,0 +1,13 @@
+dofile("script/include/inc_all.lua")
+dofile("script/include/inc_event.lua")
+function PARTNER(chSymb0)
+  subUsuComFuncTalkInBasePara2_01(chSymb0)
+  WINDOW:DrawFace(20, 88, SymAct("PARTNER"), FACE_TYPE.NORMAL)
+  WINDOW:SwitchTalk({PARTNER_0 = 385332130, PARTNER_1 = 267158243})
+  WINDOW:SwitchTalk({PARTNER_0 = 616681760, PARTNER_1 = 1037754465})
+  WINDOW:SwitchTalk({PARTNER_0 = 1922791078, PARTNER_1 = 1803569127})
+  WINDOW:DrawFace(20, 88, SymAct("PARTNER"), FACE_TYPE.DECIDE)
+  WINDOW:SwitchTalk({PARTNER_0 = 1085084708, PARTNER_1 = 1505109349})
+  WINDOW:CloseMessage()
+  subEveNod(CH("HERO"))
+end

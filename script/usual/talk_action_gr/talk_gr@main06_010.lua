@@ -1,0 +1,11 @@
+dofile("script/include/inc_all.lua")
+dofile("script/include/inc_event.lua")
+function KONOHANA(chSymb0)
+  CH(chSymb0):SetManpu("MP_LAUGH_LP")
+  WINDOW:DrawFace(20, 88, SymAct("KONOHANA"), FACE_TYPE.HAPPY)
+  CH(chSymb0):SetFacialMotion(FACIAL_MOTION.HAPPY)
+  WINDOW:Talk(SymAct("KONOHANA"), 466102219)
+  WINDOW:CloseMessage()
+  CH(chSymb0):ResetManpu()
+  CH(chSymb0):ResetFacialMotion()
+end

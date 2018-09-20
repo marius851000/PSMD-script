@@ -1,0 +1,16 @@
+dofile("script/include/inc_all.lua")
+dofile("script/include/inc_event.lua")
+function PARTNER(chSymb0)
+  subUsuComFuncTalkInBasePara2_01(chSymb0)
+  WINDOW:DrawFace(20, 88, SymAct("PARTNER"), FACE_TYPE.DECIDE)
+  CH(chSymb0):SetFacialMotion(FACIAL_MOTION.DECIDE)
+  WINDOW:SwitchTalk({PARTNER_0 = -1687793039, PARTNER_1 = -2105711824})
+  WINDOW:CloseMessage()
+  CH(chSymb0):ResetFacialMotion()
+end
+function BUIZERU(chSymb0)
+  subUsuComFuncTalkInBasePara2_01(chSymb0)
+  WINDOW:DrawFace(20, 88, SymAct("BUIZERU"), FACE_TYPE.NORMAL)
+  WINDOW:Talk(SymAct("BUIZERU"), -1454362381)
+  WINDOW:CloseMessage()
+end

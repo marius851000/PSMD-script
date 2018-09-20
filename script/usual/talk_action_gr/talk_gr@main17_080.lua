@@ -1,0 +1,10 @@
+dofile("script/include/inc_all.lua")
+dofile("script/include/inc_event.lua")
+function PARTNER(chSymb0)
+  subUsuComFuncTalkInBasePara2_01(chSymb0)
+  CH(chSymb0):SetFacialMotion(FACIAL_MOTION.HAPPY)
+  WINDOW:DrawFace(20, 88, SymAct("PARTNER"), FACE_TYPE.HAPPY)
+  WINDOW:SwitchTalk({PARTNER_0 = 1306573852, PARTNER_1 = 1425771869})
+  WINDOW:CloseMessage()
+  CH(chSymb0):ResetFacialMotion()
+end

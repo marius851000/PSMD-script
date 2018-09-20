@@ -1,0 +1,12 @@
+dofile("script/include/inc_all.lua")
+dofile("script/include/inc_event.lua")
+function AAKEN(chSymb0)
+  WINDOW:DrawFace(20, 88, SymAct("AAKEN"), FACE_TYPE.THINK)
+  CH(chSymb0):SetFacialMotion(FACIAL_MOTION.THINK)
+  WINDOW:Talk(SymAct("AAKEN"), 629854677)
+  WINDOW:KeyWait()
+  CH(chSymb0):ResetFacialMotion()
+  WINDOW:DrawFace(20, 88, SymAct("AAKEN"), FACE_TYPE.NORMAL)
+  WINDOW:Talk(SymAct("AAKEN"), 1016193172)
+  WINDOW:CloseMessage()
+end
