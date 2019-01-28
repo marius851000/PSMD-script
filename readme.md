@@ -1,1 +1,1 @@
-this scripts of super mystery dungeons.
+Scripts of super mystery dungeons.
